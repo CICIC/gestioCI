@@ -56,12 +56,6 @@ class periodTaxes(models.Model):
 	min_base = models.IntegerField(verbose_name= _(u"Base imposable Mínima"))
 	max_base = models.IntegerField(verbose_name= _(u"Base imposable Màxima"))
 
-	def __unicode__(self):
-		return self.taxId
-
-	def __getitem__(self, value):
-		return value
-
 	class Meta:
 		verbose_name = _(u'A - Taula quotes')
 		verbose_name_plural = _(u'A - Taula quotes')
@@ -95,6 +89,7 @@ class Soci(models.Model):
 	def email( self ):
 		return self.user.email
 	email.short_description = _(u"Email")
+
 	class Meta:
 		verbose_name= _(u'E - Soci')
 		verbose_name_plural= _(u'E - Socis')
