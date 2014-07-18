@@ -55,7 +55,7 @@ def export_as_csv_action(description="Export selected objects as CSV file", fiel
 			for field in field_names:
 				try:
 					valor = modeladmin.model._meta.get_field(field).verbose_name
-					row.append(unicode(getattr(obj, str( field ( )).encode('utf-8'))
+					row.append(unicode(getattr(obj,field)).encode('utf-8'))
 				except:
 					try:
 						row.append(unicode(getattr(modeladmin.model, field)(obj)).encode('utf-8'))
